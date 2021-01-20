@@ -5,8 +5,7 @@ import Error from "components/Error"
 import Breadcrumbs from "components/Breadcrumbs"
 import LaunchItem from "components/LaunchItem"
 import LoadMoreButton from "components/LoadMoreButton"
-
-const PAGE_SIZE = 12
+import { PAGE_SIZE } from "utils/constants"
 
 export default function Launches() {
   const { data, error, isValidating, setSize, size } = useSpaceXPaginated("/launches/past", {
