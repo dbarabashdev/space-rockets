@@ -4,7 +4,7 @@ export function formatDate(timestamp) {
     year: "numeric",
     month: "long",
     day: "numeric",
-  }).format(new Date(timestamp));
+  }).format(new Date(timestamp))
 }
 
 export function formatDateTime(timestamp) {
@@ -16,5 +16,5 @@ export function formatDateTime(timestamp) {
     minute: "numeric",
     second: "numeric",
     timeZoneName: "short",
-  }).format(new Date(timestamp));
+  }).format(new Date(timestamp))
 }

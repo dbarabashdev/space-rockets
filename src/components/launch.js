@@ -1,7 +1,7 @@
-import React from "react";
-import { useParams, Link as RouterLink } from "react-router-dom";
-import { format as timeAgo } from "timeago.js";
-import { Watch, MapPin, Navigation, Layers } from "react-feather";
+import React from "react"
+import { useParams, Link as RouterLink } from "react-router-dom"
+import { format as timeAgo } from "timeago.js"
+import { Watch, MapPin, Navigation, Layers } from "react-feather"
 import {
   Flex,
   Heading,
@@ -19,34 +19,30 @@ import {
   Stack,
   AspectRatioBox,
   StatGroup,
-} from "@chakra-ui/core";
+} from "@chakra-ui/core"
 
-import { useSpaceX } from "../utils/use-space-x";
-import { formatDateTime } from "../utils/format-date";
-import Error from "./error";
-import Breadcrumbs from "./breadcrumbs";
+import { useSpaceX } from "../utils/use-space-x"
+import { formatDateTime } from "../utils/format-date"
+import Error from "./error"
+import Breadcrumbs from "./breadcrumbs"
 
 export default function Launch() {
-  let { launchId } = useParams();
-  const { data: launch, error } = useSpaceX(`/launches/${launchId}`);
+  let { launchId } = useParams()
+  const { data: launch, error } = useSpaceX(`/launches/${launchId}`)
 
-  if (error) return <Error />;
+  if (error) return <Error />
   if (!launch) {
     return (
       <Flex justifyContent="center" alignItems="center" minHeight="50vh">
         <Spinner size="lg" />
       </Flex>
-    );
+    )
   }
 
   return (
     <div>
       <Breadcrumbs
-        items={[
-          { label: "Home", to: "/" },
-          { label: "Launches", to: ".." },
-          { label: `#${launch.flight_number}` },
-        ]}
+        items={[{ label: "Home", to: "/" }, { label: "Launches", to: ".." }, { label: `#${launch.flight_number}` }]}
       />
       <Header launch={launch} />
       <Box m={[3, 6]}>
@@ -59,7 +55,7 @@ export default function Launch() {
         <Gallery images={launch.links.flickr_images} />
       </Box>
     </div>
-  );
+  )
 }
 
 function Header({ launch }) {
@@ -110,7 +106,7 @@ function Header({ launch }) {
         )}
       </Stack>
     </Flex>
-  );
+  )
 }
 
 function TimeAndLocation({ launch }) {
@@ -123,9 +119,7 @@ function TimeAndLocation({ launch }) {
             Launch Date
           </Box>
         </StatLabel>
-        <StatNumber fontSize={["md", "xl"]}>
-          {formatDateTime(launch.launch_date_local)}
-        </StatNumber>
+        <StatNumber fontSize={["md", "xl"]}>{formatDateTime(launch.launch_date_local)}</StatNumber>
         <StatHelpText>{timeAgo(launch.launch_date_utc)}</StatHelpText>
       </Stat>
       <Stat>
@@ -136,30 +130,21 @@ function TimeAndLocation({ launch }) {
           </Box>
         </StatLabel>
         <StatNumber fontSize={["md", "xl"]}>
-          <Link
-            as={RouterLink}
-            to={`/launch-pads/${launch.launch_site.site_id}`}
-          >
+          <Link as={RouterLink} to={`/launch-pads/${launch.launch_site.site_id}`}>
             {launch.launch_site.site_name_long}
           </Link>
         </StatNumber>
         <StatHelpText>{launch.launch_site.site_name}</StatHelpText>
       </Stat>
     </SimpleGrid>
-  );
+  )
 }
 
 function RocketInfo({ launch }) {
-  const cores = launch.rocket.first_stage.cores;
+  const cores = launch.rocket.first_stage.cores
 
   return (
-    <SimpleGrid
-      columns={[1, 1, 2]}
-      borderWidth="1px"
-      mt="4"
-      p="4"
-      borderRadius="md"
-    >
+    <SimpleGrid columns={[1, 1, 2]} borderWidth="1px" mt="4" p="4" borderRadius="md">
       <Stat>
         <StatLabel display="flex">
           <Box as={Navigation} width="1em" />{" "}
@@ -167,9 +152,7 @@ function RocketInfo({ launch }) {
             Rocket
           </Box>
         </StatLabel>
-        <StatNumber fontSize={["md", "xl"]}>
-          {launch.rocket.rocket_name}
-        </StatNumber>
+        <StatNumber fontSize={["md", "xl"]}>{launch.rocket.rocket_name}</StatNumber>
         <StatHelpText>{launch.rocket.rocket_type}</StatHelpText>
       </Stat>
       <StatGroup>
@@ -180,15 +163,9 @@ function RocketInfo({ launch }) {
               First Stage
             </Box>
           </StatLabel>
-          <StatNumber fontSize={["md", "xl"]}>
-            {cores.map((core) => core.core_serial).join(", ")}
-          </StatNumber>
+          <StatNumber fontSize={["md", "xl"]}>{cores.map(core => core.core_serial).join(", ")}</StatNumber>
           <StatHelpText>
-            {cores.every((core) => core.land_success)
-              ? cores.length === 1
-                ? "Recovered"
-                : "All recovered"
-              : "Lost"}
+            {cores.every(core => core.land_success) ? (cores.length === 1 ? "Recovered" : "All recovered") : "Lost"}
           </StatHelpText>
         </Stat>
         <Stat>
@@ -198,19 +175,14 @@ function RocketInfo({ launch }) {
               Second Stage
             </Box>
           </StatLabel>
-          <StatNumber fontSize={["md", "xl"]}>
-            Block {launch.rocket.second_stage.block}
-          </StatNumber>
+          <StatNumber fontSize={["md", "xl"]}>Block {launch.rocket.second_stage.block}</StatNumber>
           <StatHelpText>
-            Payload:{" "}
-            {launch.rocket.second_stage.payloads
-              .map((payload) => payload.payload_type)
-              .join(", ")}
+            Payload: {launch.rocket.second_stage.payloads.map(payload => payload.payload_type).join(", ")}
           </StatHelpText>
         </Stat>
       </StatGroup>
     </SimpleGrid>
-  );
+  )
 }
 
 function Video({ launch }) {
@@ -223,17 +195,17 @@ function Video({ launch }) {
         allowFullScreen
       />
     </AspectRatioBox>
-  );
+  )
 }
 
 function Gallery({ images }) {
   return (
     <SimpleGrid my="6" minChildWidth="350px" spacing="4">
-      {images.map((image) => (
+      {images.map(image => (
         <a href={image} key={image}>
           <Image src={image.replace("_o.jpg", "_z.jpg")} />
         </a>
       ))}
     </SimpleGrid>
-  );
+  )
 }
