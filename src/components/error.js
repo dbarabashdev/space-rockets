@@ -1,11 +1,5 @@
-import React from "react";
-import {
-  Flex,
-  Alert,
-  AlertIcon,
-  AlertTitle,
-  AlertDescription,
-} from "@chakra-ui/core";
+import React from "react"
+import { Flex, Alert, AlertIcon, AlertTitle, AlertDescription } from "@chakra-ui/core"
 
 export default function Error() {
   return (
@@ -23,10 +17,9 @@ export default function Error() {
           Problems loading the data
         </AlertTitle>
         <AlertDescription maxWidth="md">
-          If the problem persists, try to refresh the page or wait a few minutes
-          and try again.
+          If the problem persists, try to refresh the page or wait a few minutes and try again.
         </AlertDescription>
       </Alert>
     </Flex>
-  );
+  )
 }
