@@ -2,8 +2,8 @@ import React from "react"
 import { Link as RouterLink } from "react-router-dom"
 import { format as timeAgo } from "timeago.js"
 import { Watch, MapPin } from "react-feather"
-import { formatDateTime } from "utils/format-date"
-import { Stat, StatLabel, StatNumber, StatHelpText, SimpleGrid, Box, Link } from "@chakra-ui/core"
+import { formatDateTime, formalDateTimeLocal } from "utils/format-date"
+import { Stat, StatLabel, StatNumber, StatHelpText, SimpleGrid, Box, Link, Tooltip } from "@chakra-ui/core"
 
 export default function TimeAndLocation({ launch }) {
   return (
@@ -15,7 +15,9 @@ export default function TimeAndLocation({ launch }) {
             Launch Date
           </Box>
         </StatLabel>
-        <StatNumber fontSize={["md", "xl"]}>{formatDateTime(launch.launch_date_local)}</StatNumber>
+        <Tooltip hasArrow placement="bottom" label={"Your local time " + formatDateTime(launch.launch_date_local)}>
+          {formalDateTimeLocal(launch.launch_date_local)}
+        </Tooltip>
         <StatHelpText>{timeAgo(launch.launch_date_utc)}</StatHelpText>
       </Stat>
       <Stat>
