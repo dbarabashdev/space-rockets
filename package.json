@@ -6,7 +6,7 @@
     "Peter Scott <peter@pleo.io>",
     "Dmytro Barabash <dbarabashdev@gmail.com>"
   ],
-  "homepage": "https://dbarabashdev.github.io/space-rockets-app",
+  "homepage": "https://dbarabashdev.github.io/space-rockets",
   "license": "MIT",
   "private": true,
   "dependencies": {
