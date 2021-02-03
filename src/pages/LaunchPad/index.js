@@ -31,9 +31,11 @@ export default function LaunchPad() {
 
   return (
     <div>
-      <Breadcrumbs
-        items={[{ label: "Home", to: "/" }, { label: "Launch Pads", to: ".." }, { label: launchPad.name }]}
-      />
+      <Flex p="6" flexDirection="row" justifyContent="space-between" alignItems="center">
+        <Breadcrumbs
+          items={[{ label: "Home", to: "/" }, { label: "Launch Pads", to: ".." }, { label: launchPad.name }]}
+        />
+      </Flex>
       <LaunchPadHeader launchPad={launchPad} />
       <Box m={[3, 6]}>
         <LocationAndVehicles launchPad={launchPad} />

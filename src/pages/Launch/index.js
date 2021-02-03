@@ -25,9 +25,11 @@ export default function Launch() {
 
   return (
     <div>
-      <Breadcrumbs
-        items={[{ label: "Home", to: "/" }, { label: "Launches", to: ".." }, { label: `#${launch.flight_number}` }]}
-      />
+      <Flex p="6" flexDirection="row" justifyContent="space-between" alignItems="center">
+        <Breadcrumbs
+          items={[{ label: "Home", to: "/" }, { label: "Launches", to: ".." }, { label: `#${launch.flight_number}` }]}
+        />
+      </Flex>
       <Header launch={launch} />
       <Box m={[3, 6]}>
         <TimeAndLocation launch={launch} />
