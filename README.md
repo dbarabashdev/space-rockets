@@ -1,10 +1,10 @@
-![Drawing of a rocket launching with Pleo logo on the side](https://repository-images.githubusercontent.com/255552950/c9991080-ff11-11ea-8706-5d40322f68fe)
-
 # ¡Space·Rockets! app
 
 ### [👉 Go to the challenge 👈](./CHALLENGE.md)
 
 ### [🚀 See the app in action 🚀](https://spacerockets.netlify.app)
+
+![CI/CD](https://github.com/dbarabashdev/space-rockets/workflows/CI/CD/badge.svg)
 
 ## Develop
 
@@ -13,21 +13,6 @@
 
 - run `yarn` to install dependencies
 - run `yarn start` to start development environment
-
-## Build
-
-> You'll need [Node](https://nodejs.org/en/) and
-> [Yarn](https://classic.yarnpkg.com/en/) installed
-
-- run `yarn` to install dependencies
-- run `yarn build` to start development environment
-- output is in `build` directory,
-  [ready to be deployed](https://create-react-app.dev/docs/deployment/)
-
-## Data
-
-All data is fetched from the unofficial SpaceX API V3 at
-[spacexdata.com](https://docs.spacexdata.com/?version=latest).
 
 ## Technologies
 
