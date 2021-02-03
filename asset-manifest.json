@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/space-rockets/static/js/main.ea4fdbec.chunk.js",
-    "main.js.map": "/space-rockets/static/js/main.ea4fdbec.chunk.js.map",
+    "main.js": "/space-rockets/static/js/main.3228149b.chunk.js",
+    "main.js.map": "/space-rockets/static/js/main.3228149b.chunk.js.map",
     "runtime-main.js": "/space-rockets/static/js/runtime-main.9aa276de.js",
     "runtime-main.js.map": "/space-rockets/static/js/runtime-main.9aa276de.js.map",
-    "static/js/2.8980f81b.chunk.js": "/space-rockets/static/js/2.8980f81b.chunk.js",
-    "static/js/2.8980f81b.chunk.js.map": "/space-rockets/static/js/2.8980f81b.chunk.js.map",
+    "static/js/2.927d2c83.chunk.js": "/space-rockets/static/js/2.927d2c83.chunk.js",
+    "static/js/2.927d2c83.chunk.js.map": "/space-rockets/static/js/2.927d2c83.chunk.js.map",
     "index.html": "/space-rockets/index.html",
-    "precache-manifest.142453be3c08bfeef91963679dd12bf1.js": "/space-rockets/precache-manifest.142453be3c08bfeef91963679dd12bf1.js",
+    "precache-manifest.2ea48083941253769386e97ce73b2bd2.js": "/space-rockets/precache-manifest.2ea48083941253769386e97ce73b2bd2.js",
     "service-worker.js": "/space-rockets/service-worker.js",
-    "static/js/2.8980f81b.chunk.js.LICENSE.txt": "/space-rockets/static/js/2.8980f81b.chunk.js.LICENSE.txt"
+    "static/js/2.927d2c83.chunk.js.LICENSE.txt": "/space-rockets/static/js/2.927d2c83.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.9aa276de.js",
-    "static/js/2.8980f81b.chunk.js",
-    "static/js/main.ea4fdbec.chunk.js"
+    "static/js/2.927d2c83.chunk.js",
+    "static/js/main.3228149b.chunk.js"
   ]
 }
