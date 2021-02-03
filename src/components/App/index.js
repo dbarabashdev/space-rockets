@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import NavBar from "../NavBar"
 import Navigation from "navigation/Navigation"
-import { CSSReset, ThemeProvider } from "@chakra-ui/core"
 import {
   getFavouriteLaunchesFromStorage,
   setFavouriteLaunchesInStorage,
@@ -46,8 +45,7 @@ export default function App() {
   }, [favouriteLaunchPads])
 
   return (
-    <ThemeProvider>
-      <CSSReset />
+    <>
       <NavBar />
       <Navigation
         favouriteLaunches={favouriteLaunches}
@@ -55,6 +53,6 @@ export default function App() {
         setFavouriteLaunch={setFavouriteLaunch}
         setFavouriteLaunchPad={setFavouriteLaunchPad}
       />
-    </ThemeProvider>
+    </>
   )
 }
