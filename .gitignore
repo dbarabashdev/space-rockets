@@ -4,9 +4,6 @@
 .pnp.js
 .idea
 
-# testing
-/coverage
-
 # production
 /build
 
