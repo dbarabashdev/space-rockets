@@ -45,7 +45,7 @@ export default function App() {
   }, [favouriteLaunchPads])
 
   return (
-    <>
+    <div>
       <NavBar />
       <Navigation
         favouriteLaunches={favouriteLaunches}
@@ -53,6 +53,6 @@ export default function App() {
         setFavouriteLaunch={setFavouriteLaunch}
         setFavouriteLaunchPad={setFavouriteLaunchPad}
       />
-    </>
+    </div>
   )
 }

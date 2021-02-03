@@ -15,7 +15,7 @@ export default function Navigation({
   return (
     <>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path="/" element={<Home />} />
         <Route
           path="/launches"
           element={<Launches favouriteLaunches={favouriteLaunches} setFavouriteLaunch={setFavouriteLaunch} />}

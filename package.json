@@ -1,12 +1,12 @@
 {
-  "name": "pleo-space-rockets-app",
+  "name": "space-rocket",
   "version": "1.0.0",
   "contributors": [
     "Maciek Pekala <maciek@pleo.io>",
     "Peter Scott <peter@pleo.io>",
     "Dmytro Barabash <dbarabashdev@gmail.com>"
   ],
-  "homepage": "https://dbarabashdev.github.io/space-rockets-app",
+  "homepage": "https://dbarabashdev.github.io/space-rockets",
   "license": "MIT",
   "private": true,
   "dependencies": {
