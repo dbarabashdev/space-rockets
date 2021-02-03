@@ -6,7 +6,7 @@ import App from "./components/App"
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <ThemeProvider>
         <CSSReset />
         <App />
