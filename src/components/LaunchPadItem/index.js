@@ -1,8 +1,11 @@
 import React from "react"
-import { Badge, Box, Text } from "@chakra-ui/core"
+import { Badge, Box, Text, Flex } from "@chakra-ui/core"
 import { Link } from "react-router-dom"
+import { FiHeart } from "react-icons/fi"
 
-export default function LaunchPadItem({ launchPad }) {
+export default function LaunchPadItem({ launchPad, favouriteLaunchPads, setFavouriteLaunchPad }) {
+  const isFavourite = (favouriteLaunchPads || []).findIndex(item => item.id === launchPad.id) > -1
+
   return (
     <Box
       as={Link}
@@ -42,6 +45,16 @@ export default function LaunchPadItem({ launchPad }) {
         <Text color="gray.500" fontSize="sm">
           {launchPad.vehicles_launched.join(", ")}
         </Text>
+
+        <Flex justifyContent="flex-end">
+          <Box>
+            {isFavourite ? (
+              <FiHeart style={{ color: "red" }} onClick={e => setFavouriteLaunchPad(launchPad, e)} />
+            ) : (
+              <FiHeart onClick={e => setFavouriteLaunchPad(launchPad, e)} />
+            )}
+          </Box>
+        </Flex>
       </Box>
     </Box>
   )

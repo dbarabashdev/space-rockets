@@ -5,7 +5,7 @@ import { ChevronsRight } from "react-feather"
 
 export default function Breadcrumbs({ items }) {
   return (
-    <Breadcrumb m="6" spacing="1" separator={<Box size="1em" as={ChevronsRight} color="gray.300" />}>
+    <Breadcrumb spacing="1" separator={<Box size="1em" as={ChevronsRight} color="gray.300" />}>
       {items.map((item, index) => {
         const isCurrentPage = items.length === index + 1
         return (

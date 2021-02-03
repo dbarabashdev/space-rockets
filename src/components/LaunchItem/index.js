@@ -3,8 +3,11 @@ import { Badge, Box, Image, Text, Flex } from "@chakra-ui/core"
 import { format as timeAgo } from "timeago.js"
 import { Link } from "react-router-dom"
 import { formatDate } from "utils/format-date"
+import { FiHeart } from "react-icons/fi"
 
-export default function LaunchItem({ launch }) {
+export default function LaunchItem({ launch, favouriteLaunches, setFavouriteLaunch }) {
+  const isFavourite = (favouriteLaunches || []).findIndex(item => item.id === launch.id) > -1
+
   return (
     <Box
       as={Link}
@@ -60,11 +63,22 @@ export default function LaunchItem({ launch }) {
         <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight" isTruncated>
           {launch.mission_name}
         </Box>
+
         <Flex>
           <Text fontSize="sm">{formatDate(launch.launch_date_utc)} </Text>
           <Text color="gray.500" ml="2" fontSize="sm">
             {timeAgo(launch.launch_date_utc)}
           </Text>
+        </Flex>
+
+        <Flex justifyContent="flex-end">
+          <Box>
+            {isFavourite ? (
+              <FiHeart style={{ color: "red" }} onClick={e => setFavouriteLaunch(launch, e)} />
+            ) : (
+              <FiHeart onClick={e => setFavouriteLaunch(launch, e)} />
+            )}
+          </Box>
         </Flex>
       </Box>
     </Box>
