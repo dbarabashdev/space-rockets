@@ -6,7 +6,7 @@ import { formatDate } from "utils/format-date"
 import { FiHeart } from "react-icons/fi"
 
 export default function LaunchItem({ launch, favouriteLaunches, setFavouriteLaunch }) {
-  const isFavourite = favouriteLaunches.findIndex(i => i.flight_number === launch.flight_number) > -1
+  const isFavourite = (favouriteLaunches || []).findIndex(item => item.id === launch.id) > -1
 
   return (
     <Box
