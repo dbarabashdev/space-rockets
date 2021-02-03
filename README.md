@@ -1,7 +1,5 @@
 # ¡Space·Rockets! app
 
-### [👉 Go to the challenge 👈](./CHALLENGE.md)
-
 ### [🚀 See the app in action 🚀](https://spacerockets.netlify.app)
 
 ![CI/CD](https://github.com/dbarabashdev/space-rockets/workflows/CI/CD/badge.svg)
